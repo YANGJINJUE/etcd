@@ -184,7 +184,7 @@ func (sctx *serveCtx) serve(
 			ErrorLog:  logger, // do not log user error
 		}
 		if err := http2.ConfigureServer(srv, &http2.Server{
-			MaxConcurrentStreams: math.MaxUint32,
+			MaxConcurrentStreams: v3rpc.MaxStreams,
 		}); err != nil {
 			return err
 		}
